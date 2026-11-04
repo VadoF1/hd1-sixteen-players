@@ -1,7 +1,7 @@
 {
   "obsidian": 1,
   "id": "vado.sixteen-players",
-  "version": "0.7.6",
+  "version": "0.7.7",
   "name": {
     "en": "16 Players (Highest Priority)"
   },
@@ -9,6 +9,7 @@
     "en": "Up to 16 players in one game, with enemies scaled to the player count. Early test build: every player in the lobby needs this mod, the same version and the same camera option. Must be placed at bottom of mod list, at the highest priority"
   },
   "source": "https://github.com/VadoF1/hd1-sixteen-players",
+  "image": "image.png",
   "scope": "session",
   "entry": "main.lua",
   "options": [
