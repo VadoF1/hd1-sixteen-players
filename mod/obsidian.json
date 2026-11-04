@@ -1,0 +1,151 @@
+{
+  "obsidian": 1,
+  "id": "vado.sixteen-players",
+  "version": "0.7.6",
+  "name": {
+    "en": "16 Players (Highest Priority)"
+  },
+  "description": {
+    "en": "Up to 16 players in one game, with enemies scaled to the player count. Early test build: every player in the lobby needs this mod, the same version and the same camera option. Must be placed at bottom of mod list, at the highest priority"
+  },
+  "source": "https://github.com/VadoF1/hd1-sixteen-players",
+  "scope": "session",
+  "entry": "main.lua",
+  "options": [
+    {
+      "id": "camera",
+      "type": "choice",
+      "default": "free",
+      "choices": [
+        {
+          "id": "free",
+          "label": {
+            "en": "Free (Recommended): each machine follows its own players"
+          }
+        },
+        {
+          "id": "shared",
+          "label": {
+            "en": "Shared (vanilla-esque): one view follows everyone"
+          }
+        }
+      ],
+      "label": {
+        "en": "Camera"
+      },
+      "description": {
+        "en": "Everyone in the lobby must pick the same camera."
+      }
+    }
+  ],
+  "resources": [
+    {
+      "type": "network_config",
+      "name": "#0b2f08fe66e395c0",
+      "bundle": "9e13b2414b41b842",
+      "data": "res/network_config.bin"
+    },
+    {
+      "type": "lua",
+      "name": "lua/hud/hud",
+      "bundle": "9e13b2414b41b842",
+      "bytecode": "res/lua_hud_hud.ljbc"
+    },
+    {
+      "type": "lua",
+      "name": "lua/menu/menu_screen_campaign_multiplayer",
+      "bundle": "9e13b2414b41b842",
+      "bytecode": "res/lua_menu_menu_screen_campaign_multiplayer.ljbc"
+    },
+    {
+      "type": "lua",
+      "name": "lua/menu/menu_screen_loadout",
+      "bundle": "9e13b2414b41b842",
+      "bytecode": "res/lua_menu_menu_screen_loadout.ljbc"
+    },
+    {
+      "type": "lua",
+      "name": "lua/menu/menu_screen_multiplayer_back",
+      "bundle": "9e13b2414b41b842",
+      "bytecode": "res/lua_menu_menu_screen_multiplayer_back.ljbc"
+    },
+    {
+      "type": "lua",
+      "name": "lua/network/network_global",
+      "bundle": "9e13b2414b41b842",
+      "bytecode": "res/lua_network_network_global_shared.ljbc",
+      "when": {
+        "camera": "shared"
+      }
+    },
+    {
+      "type": "lua",
+      "name": "lua/network/network_global",
+      "bundle": "9e13b2414b41b842",
+      "bytecode": "res/lua_network_network_global_free.ljbc",
+      "when": {
+        "camera": "free"
+      }
+    },
+    {
+      "type": "lua",
+      "name": "lua/settings/loadout_settings",
+      "bundle": "9e13b2414b41b842",
+      "bytecode": "res/lua_settings_loadout_settings.ljbc"
+    },
+    {
+      "type": "lua",
+      "name": "lua/states/mission_end_states/mission_end_state_event_completed_reward",
+      "bundle": "9e13b2414b41b842",
+      "bytecode": "res/lua_states_mission_end_states_mission_end_state_event_completed_reward.ljbc"
+    },
+    {
+      "type": "lua",
+      "name": "lua/states/mission_end_states/mission_end_state_experience_distribution",
+      "bundle": "9e13b2414b41b842",
+      "bytecode": "res/lua_states_mission_end_states_mission_end_state_experience_distribution.ljbc"
+    },
+    {
+      "type": "lua",
+      "name": "lua/states/mission_end_states/mission_end_state_planet_completed_reward",
+      "bundle": "9e13b2414b41b842",
+      "bytecode": "res/lua_states_mission_end_states_mission_end_state_planet_completed_reward.ljbc"
+    },
+    {
+      "type": "lua",
+      "name": "lua/states/state_game",
+      "bundle": "9e13b2414b41b842",
+      "bytecode": "res/lua_states_state_game.ljbc"
+    },
+    {
+      "type": "lua",
+      "name": "lua/states/state_main_menu",
+      "bundle": "9e13b2414b41b842",
+      "bytecode": "res/lua_states_state_main_menu.ljbc"
+    },
+    {
+      "type": "lua",
+      "name": "lua/states/state_menu",
+      "bundle": "9e13b2414b41b842",
+      "bytecode": "res/lua_states_state_menu.ljbc"
+    },
+    {
+      "type": "lua",
+      "name": "lua/states/state_mission_end",
+      "bundle": "9e13b2414b41b842",
+      "bytecode": "res/lua_states_state_mission_end.ljbc"
+    },
+    {
+      "type": "lua",
+      "name": "lua/states/state_mission_start",
+      "bundle": "9e13b2414b41b842",
+      "bytecode": "res/lua_states_state_mission_start.ljbc"
+    },
+    {
+      "type": "lua",
+      "name": "lua/states/state_season_end",
+      "bundle": "9e13b2414b41b842",
+      "bytecode": "res/lua_states_state_season_end.ljbc"
+    }
+  ]
+}
